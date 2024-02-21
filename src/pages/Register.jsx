@@ -22,7 +22,7 @@ try{
 
 const storageRef = ref(storage, displayName);
 
-const uploadTask = await uploadBytesResumable(storageRef, file);
+const uploadTask = uploadBytesResumable(storageRef, file);
 uploadTask.on(
   (error) => {
     setErr(true);
@@ -46,6 +46,7 @@ uploadTask.on(
 );
 
 }catch(err){
+  console.log(err);
   setErr(true);
 }
 
